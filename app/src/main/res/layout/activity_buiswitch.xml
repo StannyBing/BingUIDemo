@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        tools:context=".ui.BUISwitchActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="普通" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:isChecked="true" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="默认打开" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:color_checked="@color/colorPrimary"
+                app:isChecked="true" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="修改选中颜色" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:switch_height="20dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="修改开关高度，小球半径跟随变化" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:switch_width="60dp" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="修改开关宽度" />
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+        <com.zx.bui.ui.buiswitch.BUISwitch
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:ball_padding="5dp"
+                app:isChecked="true" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:text="修改小球padding" />
+    </LinearLayout>
+
+</LinearLayout>
