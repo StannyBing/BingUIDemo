@@ -1,8 +1,8 @@
 package com.zx.buidemo
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.zx.buidemo.adapter.MainAdapter
 import com.zx.buidemo.bean.MainBean
 import com.zx.buidemo.ui.BUIButtonActivity

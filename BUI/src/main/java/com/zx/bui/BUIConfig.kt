@@ -1,7 +1,7 @@
 package com.zx.bui
 
 import android.graphics.Color
-import android.support.annotation.ColorInt
+import androidx.annotation.ColorInt
 
 /**
  * Created by Xiangb on 2019/11/8.

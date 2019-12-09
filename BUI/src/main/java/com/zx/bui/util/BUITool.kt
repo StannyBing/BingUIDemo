@@ -3,8 +3,8 @@ package com.zx.bui.util
 import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
-import android.support.annotation.ColorInt
 import android.util.TypedValue
+import androidx.annotation.ColorInt
 
 
 /**

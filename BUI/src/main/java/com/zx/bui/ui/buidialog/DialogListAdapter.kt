@@ -1,11 +1,11 @@
 package com.zx.bui.ui.buidialog
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.zx.bui.R
 import com.zx.bui.ui.buicheckbox.BUICheckBox
 

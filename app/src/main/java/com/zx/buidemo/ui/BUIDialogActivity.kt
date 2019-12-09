@@ -3,10 +3,10 @@ package com.zx.buidemo.ui
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.zx.bui.ui.buidialog.BUIDialog
 import com.zx.bui.util.BUITool
 import com.zx.buidemo.R

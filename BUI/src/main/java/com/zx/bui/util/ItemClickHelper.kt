@@ -1,14 +1,13 @@
 package com.zx.bui.util
 
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.OnChildAttachStateChangeListener
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 
 class ItemClickHelper private constructor(private val recyclerView: RecyclerView) {
     private var onItemClick: (Int) -> Unit = {}
     private var onItemLongClick: (Int) -> Unit = {}
 
-    private val attachListener = object : OnChildAttachStateChangeListener {
+    private val attachListener = object : RecyclerView.OnChildAttachStateChangeListener {
         override fun onChildViewAttachedToWindow(view: View) {
             view.setOnClickListener {
                 val holder = this@ItemClickHelper.recyclerView.getChildViewHolder(view)
