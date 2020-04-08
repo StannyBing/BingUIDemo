@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context=".ui.BUIButtonActivity">
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_text="普通选择框" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_text="改变未选中的颜色"
+            app:color_unchecked="@color/chartreuse" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_text="改变选中的颜色"
+            app:color_checked="@color/colorPrimary" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_text="改变默认选中状态"
+            app:isChecked="true" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            app:check_text="超长文本自动换行测试" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_text="文本字体大小设置"
+            app:text_size="10sp" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_radius="20dp"
+            app:check_text="图标半径设置" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_padding="30dp"
+            app:check_text="图标Padding设置" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:check_anim="false"
+            app:check_text="动画关闭" />
+
+    <com.zx.bui.ui.buicheckbox.BUICheckBox
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            app:check_clickable="false"
+            app:check_text="控件禁止使用（仅禁止点击，仍可以通过代码设置选中状态）" />
+</LinearLayout>

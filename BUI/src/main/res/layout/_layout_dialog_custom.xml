@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <com.zx.bui.view.MaxHeightLinearLayout
+            android:layout_width="250dp"
+            app:maxHeight="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:minHeight="80dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+        <TextView
+                android:id="@+id/tv_custom_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxWidth="250dp"
+                android:layout_marginTop="5dp"
+                android:singleLine="true"
+                android:text="提示"
+                android:textColor="@color/bui_gray"
+                android:textSize="@dimen/text_big_size"/>
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:gravity="center"
+                android:id="@+id/ll_custom_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+    </com.zx.bui.view.MaxHeightLinearLayout>
+
+</LinearLayout>
