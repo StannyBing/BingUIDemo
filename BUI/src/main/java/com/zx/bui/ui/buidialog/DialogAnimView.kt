@@ -13,19 +13,24 @@ import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.interpolator.view.animation.FastOutSlowInInterpolator
 import com.zx.bui.R
+import com.zx.bui.util.BUITool
 
 /**
  * Created by Xiangb on 2019/11/11.
  * 功能：
  */
-class DialogAnimView @JvmOverloads constructor(context: Context, attributes: AttributeSet? = null, defStyle: Int = 0) :
-        LinearLayout(context, attributes, defStyle) {
+class DialogAnimView @JvmOverloads constructor(
+    context: Context,
+    attributes: AttributeSet? = null,
+    defStyle: Int = 0
+) :
+    LinearLayout(context, attributes, defStyle) {
 
     private val pointPaint = Paint()
     private val ringPaint = Paint()
     private val textPaint = Paint()
-    private val ringWidth = 10f
-    private val ringRadius = 50f
+    private var ringWidth = 10f
+    private var ringRadius = 50f
     private val ringArc = 150f
     private val pointNum = 18
 
@@ -33,6 +38,7 @@ class DialogAnimView @JvmOverloads constructor(context: Context, attributes: Att
     private var isAddPoint = true
 
     private var loadingNum = -1
+    private var loadingWidth = 0
 
     private var animProgress = 0f
         set(value) {
@@ -59,6 +65,10 @@ class DialogAnimView @JvmOverloads constructor(context: Context, attributes: Att
         textPaint.strokeWidth = 1f
         textPaint.style = Paint.Style.FILL
 
+        loadingWidth = BUITool.dp2px(context, 70f)
+        ringWidth = BUITool.dp2px(context, 5f).toFloat()
+        ringRadius = BUITool.dp2px(context, 23f).toFloat()
+
         viewTreeObserver.addOnDrawListener {
             if (!isPlay) {
                 playAnim()
@@ -68,8 +78,8 @@ class DialogAnimView @JvmOverloads constructor(context: Context, attributes: Att
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(
-                MeasureSpec.makeMeasureSpec(120, MeasureSpec.EXACTLY),
-                MeasureSpec.makeMeasureSpec(120, MeasureSpec.EXACTLY)
+            MeasureSpec.makeMeasureSpec(loadingWidth, MeasureSpec.EXACTLY),
+            MeasureSpec.makeMeasureSpec(loadingWidth, MeasureSpec.EXACTLY)
         )
     }
 
@@ -94,13 +104,21 @@ class DialogAnimView @JvmOverloads constructor(context: Context, attributes: Att
             var pointY: Float? = null
             if (isAddPoint) {
                 if ((i / pointNum.toFloat()) * 360f - 90 <= startAngle) {
-                    pointX = width / 2 + Math.cos(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble()).toFloat() * ringRadius
-                    pointY = height / 2 + Math.sin(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble()).toFloat() * ringRadius
+                    pointX =
+                        width / 2 + Math.cos(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble())
+                            .toFloat() * ringRadius
+                    pointY =
+                        height / 2 + Math.sin(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble())
+                            .toFloat() * ringRadius
                 }
             } else {
                 if ((i / pointNum.toFloat()) * 360f - 90 > startAngle + sweepAngle) {
-                    pointX = width / 2 + Math.cos(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble()).toFloat() * ringRadius
-                    pointY = height / 2 + Math.sin(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble()).toFloat() * ringRadius
+                    pointX =
+                        width / 2 + Math.cos(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble())
+                            .toFloat() * ringRadius
+                    pointY =
+                        height / 2 + Math.sin(Math.PI * ((i / pointNum.toFloat()) * 360 - 90) / 180.toDouble())
+                            .toFloat() * ringRadius
                 }
             }
             if (pointX != null && pointY != null) {
@@ -108,13 +126,25 @@ class DialogAnimView @JvmOverloads constructor(context: Context, attributes: Att
             }
         }
         //绘制圆环
-        canvas?.drawArc(width / 2 - ringRadius, height / 2 - ringRadius, width / 2 + ringRadius, height / 2 + ringRadius, startAngle, sweepAngle, false, ringPaint
+        canvas?.drawArc(
+            width / 2 - ringRadius,
+            height / 2 - ringRadius,
+            width / 2 + ringRadius,
+            height / 2 + ringRadius,
+            startAngle,
+            sweepAngle,
+            false,
+            ringPaint
         )
         //绘制加载数字
         if (loadingNum > -1) {
             val numRect = Rect()
             textPaint.getTextBounds("$loadingNum%", 0, "$loadingNum%".length, numRect)
-            canvas?.drawText("$loadingNum%", width / 2 - numRect.width() / 2f, height / 2 + numRect.height() / 2f - 2f, textPaint
+            canvas?.drawText(
+                "$loadingNum%",
+                width / 2 - numRect.width() / 2f,
+                height / 2 + numRect.height() / 2f - 2f,
+                textPaint
             )
         }
     }
