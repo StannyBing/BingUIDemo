@@ -60,7 +60,7 @@ class BUICheckBox @JvmOverloads constructor(context: Context, attributeSet: Attr
         isChecked = typeArray.getBoolean(R.styleable.BUICheckBox_isChecked, false)
         checkedColor = typeArray.getColor(R.styleable.BUICheckBox_color_checked, BUIConfig.uiColor)
         uncheckedColor = typeArray.getColor(R.styleable.BUICheckBox_color_unchecked, ContextCompat.getColor(context, R.color.bui_gray))
-        mCheckText = if (typeArray.hasValue(R.styleable.BUICheckBox_check_text)) typeArray.getString(R.styleable.BUICheckBox_check_text) else ""
+        mCheckText = if (typeArray.hasValue(R.styleable.BUICheckBox_check_text)) typeArray.getString(R.styleable.BUICheckBox_check_text)!! else ""
         checkRadius = typeArray.getDimension(R.styleable.BUICheckBox_check_radius, BUITool.dp2px(context, 10f).toFloat())
         showCheckAnim = typeArray.getBoolean(R.styleable.BUICheckBox_check_anim, true)
         isCheckClickable = typeArray.getBoolean(R.styleable.BUICheckBox_check_clickable, true)
